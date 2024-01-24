@@ -1,0 +1,35 @@
+.heading
+{
+    width : 100%;
+    text-align: left;
+}
+
+.heading h3
+{
+    display : inline;
+}
+
+.heading button
+{
+    float : right;
+    border : 1px solid white;
+}
+
+#start,#status
+{
+    font-size: 22px;
+}
+
+.footer
+{
+    position : fixed;
+    bottom : 0;
+    text-align : center;
+    color : black;
+    width : 100%;
+    background-color : gray;
+    font-size : 20px;
+    font-weight : bold;
+    padding-top : 10px;
+    padding-bottom : 10px;
+}
