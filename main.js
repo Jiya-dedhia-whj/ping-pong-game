@@ -1,4 +1,6 @@
-
+right_wrist_X = "";
+right_wrist_Y = "";
+score_right_wrist = "";
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -36,6 +38,18 @@ function setup(){
 function modelLoaded()
 {
   console.log("Model is Loaded");
+}
+
+function gotPoses(results)
+{
+  if(results.length > 0)
+  {
+    console.log(results);
+    right_wrist_X = results[0].pose.rightWrist.x;
+    right_wrist_Y = results[0].pose.rightWrist.y;
+    score_right_wrist = results[0].pose.keypoints[10].score;
+    console.log("rightWrist_x = " + right_wrist_X + ", rightWrist_y = " + right_wrist_Y + " , rightWrist_score = " + score_right_wrist);
+  }
 }
 
 
@@ -79,6 +93,13 @@ function draw(){
    
    //function move call which in very important
     move();
+
+    if(score_right_wrist > 0.2)
+    {
+      fill("blue");
+      stroke("lightblue");
+      circle(right_wrist_X,right_wrist_Y,20);
+    }
 }
 
 
